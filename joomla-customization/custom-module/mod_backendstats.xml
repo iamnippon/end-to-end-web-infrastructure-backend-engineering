@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>Backend Stats Module</name>
+    <author>Nippon Chowdhury</author>
+    <version>1.0.0</version>
+    <description>Displays backend system information.</description>
+
+    <files>
+        <filename module="mod_backendstats">mod_backendstats.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+</extension>
