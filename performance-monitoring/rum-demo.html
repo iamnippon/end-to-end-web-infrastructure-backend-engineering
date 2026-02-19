@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RUM Demo</title>
+</head>
+<body>
+
+<h2>Real User Monitoring Example</h2>
+
+<script>
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const timing = performance.timing;
+        const pageLoadTime = timing.loadEventEnd - timing.navigationStart;
+
+        fetch("logger.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                page_load_time_ms: pageLoadTime
+            })
+        });
+
+        console.log("Page Load Time:", pageLoadTime, "ms");
+    }, 0);
+});
+</script>
+
+</body>
+</html>
